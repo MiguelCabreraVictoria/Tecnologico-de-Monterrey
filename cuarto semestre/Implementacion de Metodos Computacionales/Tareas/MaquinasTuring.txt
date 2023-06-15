@@ -1,0 +1,81 @@
+----Primer ejercicio ----
+
+#Miguel Angel Cabrera Victoria
+#{0^n 1^n 0^n | n>=1}:
+input: '001100'
+blank: ' '
+start state: q0
+table:
+  q0:
+    0: {write: x, R: q1}
+    1: {L: inv}
+  q1:
+    0: {R: q1}
+    1: {R: q2}
+  q2:
+    1: {R: q2}
+    0: {R: q3}
+  q3:
+    0: {L: q3}
+    1: {L: q4}
+  q4:
+    1: {L: q5}
+    0: {R: inv}
+  q5:
+    0: {L: q6}
+    1: {R: inv}
+  q6: 
+    0: {L: inv}
+    x: {R: ok}
+    
+    
+  inv:
+  ok:
+-----Segundo ejercicio -----
+input: '0110110'
+blank: ' '
+start state: q0
+table:
+  q0:
+    0: {R: q1}
+    1: {R: inv}
+  q1:
+    1: {R: q2}
+    ' ': {R: inv}
+    0: {R: inv}
+  q2:
+    1: {R: q3}
+  q3: 
+    0: {R: q4}
+    ' ': {L: ok}
+  q4: 
+    ' ': {L: ok}
+    0: {R: q0}
+    1: {R: q2}
+  inv:
+  ok:
+
+-----Tercer ejercicio-----
+
+input: '11111-111'
+blank: ' '
+start state: q0
+table:
+  q0:
+    1: {R: q0}
+    '-': {R: q0}
+    ' ': {L: q1}
+  q1:
+    1: {write: ' ', L: q2 }
+    '-': {write: ' ', R: ok}
+  q2:
+    1: {L: q2}
+    '-': {L: q3}
+  q3:
+    1: {L: q3}
+    ' ': {R: q4}
+  q4:
+    1: {write: ' ', R: q0 }
+  ok:
+    
+    

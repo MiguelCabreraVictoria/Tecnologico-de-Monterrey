@@ -1,0 +1,52 @@
+Syntax of Languages 
+
+Sentence: Subject + Verb + Object
+
+Subject = noun, article 
+
+Context-Free-Grammar(CFG)
+
+G = (V,T.P,S)
+
+v = non-terminal-symbol initial 
+T = termianl symbols
+P = prodcution, terminal to no-terminal
+S = initial non-terminal symbol, where production start
+
+Productions 
+
+consists of 
+-a non-terminal on the left side 
+the production symbol(-> or ::=)
+a string of terminals and non-teminals on the right
+
+Upperletter : no-terminal 
+
+Example:
+A -> bA
+A -> c 
+
+--A simple CFG --
+
+G = ({E}, {+,*,(,),id},P,E)
+
+P = E -> E + E
+    E -> E * E
+    E -> (E)
+    E -> id
+    
+id * (id + id ) + id * id
+
+E * E + E
+E * (E) + E
+E * (E + E) + E
+E + (E + E) + E * E
+
+
+Derivations
+
+Let A -> B be a production in P
+a,B, and y strings in (V U T)*
+(V U T)*
+
+Then a^b -> aBy (The left hand side derives to the right hand side in grammar)
